@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    div {
+        overflow-y: scroll;
+        border-radius: 20px;
+        height: 80px; /* Beispielhöhe */
+        padding-top: 20px; /* Platz oben */
+        padding-bottom: 20px; /* Platz unten */
+        width:300px;
+        border:1px solid green;
+      }
+      
+      /* Anpassen der Scrollbar */
+      div::-webkit-scrollbar {
+        width: 10px; /* Breite der Scrollbar */
+      }
+      
+      div::-webkit-scrollbar-track {
+        background: transparent; /* Hintergrundfarbe der Scrollbar */
+      }
+      
+      div::-webkit-scrollbar-thumb {
+        background: #888; /* Farbe der Scrollbar */
+        border-radius: 20px; /* Runde Ecken der Scrollbar */
+        border: 8px solid transparent; /* Platz oben und unten der Scrollbar */
+        background-clip: content-box;
+      }
+      
+      div::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Farbe der Scrollbar beim Überfahren */
+      }
+    </style>
+    <script>
+function iterate(obj) {
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            console.log("Schlüssel:", key, "Wert:", obj[key]);
+            if (typeof obj[key] === 'object' && obj[key] !== null) {
+                iterate(obj[key]);
+            }
+        }
+    }
+}
+
+// Verwendung der Funktion
+iterate(data);
+
+fetch('https://pokeapi.co/api/v2/pokemon/25')
+    .then(response => response.json())
+    .then(data => {
+        // Zugriff auf die Daten hier
+        console.log(data.name);
+    })
+    .catch((error) => {
+        console.error('Fehler:', error);
+    });
+    </script>
+
+
+</head>
+<body>
+    <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt fuga magni ut reprehenderit voluptate quia minus dignissimos ipsum corrupti sed esse eius saepe, modi perspiciatis tempora laudantium facilis nobis error!</div>
+</body>
+</html>
