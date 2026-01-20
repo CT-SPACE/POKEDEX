@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon_96.ico">
     <title>POKEDEX</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-changed.min.css">
+    <link rel="stylesheet" type="text/css" href="script/style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" type="myChart"></script>
 
-    <script src="script.js"></script>
-    <script src="script_chart.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/script_chart.js"></script>
+        
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    
 </head>
@@ -18,8 +20,49 @@
      <h1 class="effekt top">POKEDEX</h1>
     <section id="overview">
         <div id="allPokemons"></div>
-        <bottom><img src="./img/Klarin.png" class="fixed"></bottom>
+        <bottom><img src="img/Klarin.png" class="fixed" alt=""></bottom>
     </section>
-    
+    <a id="liveToastBtn" class="icon-link icon-link-hover"  >
+  <svg xmlns="http://www.w3.org/2000/svg" class="bi" viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+  </svg>
+  Legal Notice and Privacy Policy
+</a>
+  <div class="toast-container position-fixed top-0 start-0 p-4">
+  <div id="liveToast" class="toast fade hide" role="alert" aria-live="assertive" aria-atomic="true"  data-bs-autohide="false">
+    <div class="toast-header">
+      <strong class="me-auto">Impressum & Datenschutzerklärung</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+  
+<smaller>Angaben gemäß § 5 TMG</smaller>
+<p>
+Diese Webseite wurde erstellt und wird betrieben von:
+</p>
+<p>
+<strong>Christina Troitzsch</strong><br>
+Frontend Developer<br>
+München, Deutschland
+</p>
+<img src="img/image.svg" alt="Impressum" class="image">
+<p></p>
+
+<p>Es werden keine personenbezogenen Daten erhoben oder verarbeitet. </p>
+<p>Diese Webseite dient ausschließlich als Arbeitsprobe im Rahmen der Developer Akademie und erhebt keine Daten von Besuchern.
+   </p> <div class="toast-footer">
+      <small>2024 Christina Troitzsch</small>    </div>
+    </div>
+  </div>
+</div>
+
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('liveToastBtn').addEventListener('click', function() {
+    var toastEl = document.getElementById('liveToast');
+    var toast = new bootstrap.Toast(toastEl);
+    toast.show();
+  });
+</script>
 </body>
 </html>
