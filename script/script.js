@@ -32,14 +32,13 @@ async function loadOverview(heighestNumber, i) {
 
   urlResponse = await fetch(url).catch(errorFunction);
   showContent = await urlResponse.json();
-  console.log("Loaded URL:", showContent);
+
 
   for (i; i < heighestNumber; i++) {
     let n = i + 1;
     let currentURL = url + `${n}`;
     let response = await fetch(currentURL).catch(errorFunction);
     currentPokemon = await response.json();
-    console.log("Loaded Pokemon:", currentPokemon);
     await renderPokemonHead(n, overview);
     let writeType = document.getElementById(`types${n}`);
     let type = currentPokemon.types;
