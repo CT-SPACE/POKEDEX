@@ -401,7 +401,7 @@ bottom {
   justify-content: right;
   bottom: 10px;
   right: 10px;
-  width: 100vw;
+  /* width: 100vw; */
   z-index: 20;
 }
 .fixed {
@@ -432,9 +432,9 @@ bottom {
 }
 
 @media (max-width: 650px) {
-  .pokedexHead {
+  /* .pokedexHead {
     max-width: 100vw;
-  }
+  } */
   h1.effekt {
     padding-left: unset;
     text-align: center;
@@ -448,9 +448,9 @@ bottom {
     width: 150px;
     height: 150px;
   }
-  .showmore-area {
+  /* .showmore-area {
     max-width: 80vw;
-  }
+  } */
   #liveToast.show {
     width: 100%;
   }
